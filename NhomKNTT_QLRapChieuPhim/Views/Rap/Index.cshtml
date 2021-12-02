@@ -1,0 +1,48 @@
+﻿@model IEnumerable<QuanLyRapChieuPhim.Entitiies.Rap>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+    <a asp-action="Details">Details</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MaRap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenRap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoChoTrong)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaRap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenRap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoChoTrong)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit") |
+                @Html.ActionLink("Details", "Details") |
+                @Html.ActionLink("Delete", "Delete")
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
